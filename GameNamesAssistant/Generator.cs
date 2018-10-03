@@ -21,7 +21,7 @@ namespace GameNamesAssistant
             while (name.Length < len)
             {
                 letter = (char)random.Next(65, 90);
-                if (name.Length == 0 || name[name.Length] != letter)
+                if (name.Length == 0 || name[name.Length - 1] != letter)
                 {
                     name += letter;
                 }
@@ -37,17 +37,23 @@ namespace GameNamesAssistant
         /// <returns>A random name</returns>
         public static string GenerateRandomPlaceName(int len)
         {
-            string name = "";
-            char letter;
-            while (name.Length < len)
+            if (len >= 2)
             {
-                letter = (char)random.Next(65, 90);
-                if (name.Length == 0 || name[name.Length] != letter)
+                string name = "";
+                char letter;
+                while (name.Length < len)
                 {
-                    name += letter;
+                    letter = (char)random.Next(65, 90);
+                    if (name.Length == 0 || name[name.Length - 1] != letter)
+                    {
+                        name += letter;
+                    }
                 }
+                return name;
             }
-            return name;
+            else
+                return null;
+
         }
         /// <summary>
         /// Generates a random name from a given array of letters with the option to specify the length of the name. The length of the name is selected randomly between 3 and 15 letters.
@@ -55,13 +61,13 @@ namespace GameNamesAssistant
         /// <param name="letters">The collection of at least 2 letters.</param>
         /// <param name="wordLen"> Optional length of the generated name. Default is random 3 - 15.</param>
         /// <returns>A randomly generated name. Null if incorrect parameters were specified.</returns>
-        public static string GenerateRandomPlaceName(char[] letters, int wordLen = 0)
+        public static string GenerateRandomPlaceName(char[] letters, int wordLen = -1)
         {
-            if (letters.Length > 2)
+            if (letters.Length >= 2)
             {
-                if (wordLen > 0)
+                if (wordLen > 2 || wordLen == -1)
                 {
-                    if (wordLen != 0)
+                    if (wordLen != -1)
                     {
                         int len = wordLen;
                         string name = "";
@@ -69,7 +75,7 @@ namespace GameNamesAssistant
                         while (name.Length < len)
                         {
                             letter = letters[random.Next(letters.Length)];
-                            if (name.Length == 0 || name[name.Length] != letter)
+                            if (name.Length == 0 || name[name.Length - 1] != letter)
                             {
                                 name += letter;
                             }
@@ -84,7 +90,7 @@ namespace GameNamesAssistant
                         while (name.Length < len)
                         {
                             letter = letters[random.Next(letters.Length)];
-                            if (name.Length == 0 || name[name.Length] != letter)
+                            if (name.Length == 0 || name[name.Length - 1] != letter)
                             {
                                 name += letter;
                             }

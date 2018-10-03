@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameNamesAssistant", "GameNamesAssistant\GameNamesAssistant.csproj", "{2E8A93E4-19D9-42AE-9016-CABE4E7C9E9E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameNamesAssistantTests", "GameNamesAssistantTests\GameNamesAssistantTests.csproj", "{93913E31-3B14-4E9A-8EC5-CD35844B87AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2E8A93E4-19D9-42AE-9016-CABE4E7C9E9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E8A93E4-19D9-42AE-9016-CABE4E7C9E9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E8A93E4-19D9-42AE-9016-CABE4E7C9E9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93913E31-3B14-4E9A-8EC5-CD35844B87AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93913E31-3B14-4E9A-8EC5-CD35844B87AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93913E31-3B14-4E9A-8EC5-CD35844B87AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93913E31-3B14-4E9A-8EC5-CD35844B87AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
