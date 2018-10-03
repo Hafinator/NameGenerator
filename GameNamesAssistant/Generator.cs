@@ -18,12 +18,44 @@ namespace GameNamesAssistant
             int len = random.Next(3, 16);
             string name = "";
             char letter;
+            //bool vowel = false;
+            int withoutVowel = 0;
             while (name.Length < len)
             {
                 letter = (char)random.Next(65, 90);
                 if (name.Length == 0 || name[name.Length - 1] != letter)
                 {
+                    if (letter != 'A' && letter != 'E' && letter != 'I' && letter != 'O' && letter != 'U')
+                    {
+                        withoutVowel++;
+                    }
+                    else
+                    {
+                        withoutVowel = 0;
+                    }
                     name += letter;
+
+                    if (name.Length < len && withoutVowel == 2)
+                    {
+                        switch (random.Next(5))
+                        {
+                            case 0:
+                                name += 'A';
+                                break;
+                            case 1:
+                                name += 'E';
+                                break;
+                            case 2:
+                                name += 'I';
+                                break;
+                            case 3:
+                                name += 'O';
+                                break;
+                            case 4:
+                                name += 'U';
+                                break;
+                        }
+                    }
                 }
             }
 
@@ -39,6 +71,7 @@ namespace GameNamesAssistant
         {
             if (len >= 2)
             {
+                int withoutVowel = 0;
                 string name = "";
                 char letter;
                 while (name.Length < len)
@@ -46,7 +79,37 @@ namespace GameNamesAssistant
                     letter = (char)random.Next(65, 90);
                     if (name.Length == 0 || name[name.Length - 1] != letter)
                     {
+                        if (letter != 'A' && letter != 'E' && letter != 'I' && letter != 'O' && letter != 'U')
+                        {
+                            withoutVowel++;
+                        }
+                        else
+                        {
+                            withoutVowel = 0;
+                        }
                         name += letter;
+
+                        if (name.Length < len && withoutVowel == 2)
+                        {
+                            switch (random.Next(5))
+                            {
+                                case 0:
+                                    name += 'A';
+                                    break;
+                                case 1:
+                                    name += 'E';
+                                    break;
+                                case 2:
+                                    name += 'I';
+                                    break;
+                                case 3:
+                                    name += 'O';
+                                    break;
+                                case 4:
+                                    name += 'U';
+                                    break;
+                            }
+                        }
                     }
                 }
                 return name;
@@ -72,12 +135,32 @@ namespace GameNamesAssistant
                         int len = wordLen;
                         string name = "";
                         char letter;
+                        int withoutVowel = 0;
+                        List<char> vowels = new List<char>();
+
+                        for (int i = 0; i < letters.Length; i++)
+                        {
+                            if ((letters[i] == 'a' || letters[i] == 'A') || (letters[i] == 'e' || letters[i] == 'E')||(letters[i] == 'i' || letters[i] == 'i') 
+                                || (letters[i] == 'o' || letters[i] == 'O') || (letters[i] == 'u' || letters[i] == 'U'))
+                            {
+                                vowels.Add(letters[i]);
+                            }
+                        }
+
                         while (name.Length < len)
                         {
                             letter = letters[random.Next(letters.Length)];
                             if (name.Length == 0 || name[name.Length - 1] != letter)
                             {
+                                if (!vowels.Contains(letter))
+                                {
+                                    withoutVowel++;
+                                }
                                 name += letter;
+                                if (name.Length < len && withoutVowel == 2)
+                                {
+                                    name += vowels[random.Next(vowels.Count)];
+                                }
                             }
                         }
                         return name;
@@ -87,12 +170,32 @@ namespace GameNamesAssistant
                         int len = random.Next(3, 16);
                         string name = "";
                         char letter;
+                        int withoutVowel = 0;
+                        List<char> vowls = new List<char>();
+
+                        for (int i = 0; i < letters.Length; i++)
+                        {
+                            if ((letters[i] == 'a' || letters[i] == 'A') || (letters[i] == 'e' || letters[i] == 'E') || (letters[i] == 'i' || letters[i] == 'i')
+                                || (letters[i] == 'o' || letters[i] == 'O') || (letters[i] == 'u' || letters[i] == 'U'))
+                            {
+                                vowls.Add(letters[i]);
+                            }
+                        }
+
                         while (name.Length < len)
                         {
                             letter = letters[random.Next(letters.Length)];
                             if (name.Length == 0 || name[name.Length - 1] != letter)
                             {
+                                if (!vowls.Contains(letter))
+                                {
+                                    withoutVowel++;
+                                }
                                 name += letter;
+                                if (name.Length < len && withoutVowel == 2)
+                                {
+                                    name += vowls[random.Next(vowls.Count)];
+                                }
                             }
                         }
                         return name;
