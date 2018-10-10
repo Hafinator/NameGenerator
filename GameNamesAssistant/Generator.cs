@@ -35,7 +35,7 @@ namespace GameNamesAssistant
                     }
                     name += letter;
 
-                    if (name.Length < len && withoutVowel == 2)
+                    if (name.Length < len && withoutVowel >= 2)
                     {
                         switch (random.Next(5))
                         {
@@ -89,7 +89,7 @@ namespace GameNamesAssistant
                         }
                         name += letter;
 
-                        if (name.Length < len && withoutVowel == 2)
+                        if (name.Length < len && withoutVowel >= 2)
                         {
                             switch (random.Next(5))
                             {
@@ -157,7 +157,7 @@ namespace GameNamesAssistant
                                     withoutVowel++;
                                 }
                                 name += letter;
-                                if (name.Length < len && withoutVowel == 2)
+                                if (name.Length < len && withoutVowel >= 2)
                                 {
                                     name += vowels[random.Next(vowels.Count)];
                                 }
@@ -192,7 +192,7 @@ namespace GameNamesAssistant
                                     withoutVowel++;
                                 }
                                 name += letter;
-                                if (name.Length < len && withoutVowel == 2)
+                                if (name.Length < len && withoutVowel >= 2)
                                 {
                                     name += vowls[random.Next(vowls.Count)];
                                 }
