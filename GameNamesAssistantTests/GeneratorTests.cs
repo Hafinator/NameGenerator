@@ -1,10 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using GameNamesAssistant;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GameNamesAssistant.Tests
 {
@@ -47,7 +41,7 @@ namespace GameNamesAssistant.Tests
             word = Generator.GenerateRandomPlaceName(0);
 
             Assert.IsTrue(word == null);
-            
+
         }
 
         [TestMethod()]

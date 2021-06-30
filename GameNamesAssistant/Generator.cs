@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GameNamesAssistant
 {
     public static class Generator
     {
-        static Random random = new Random();
+        private static readonly Random random = new Random();
+
         /// <summary>
         /// Generates a random 3 - 15 letters long uppercase name.
         /// </summary>
@@ -42,15 +40,19 @@ namespace GameNamesAssistant
                             case 0:
                                 name += 'A';
                                 break;
+
                             case 1:
                                 name += 'E';
                                 break;
+
                             case 2:
                                 name += 'I';
                                 break;
+
                             case 3:
                                 name += 'O';
                                 break;
+
                             case 4:
                                 name += 'U';
                                 break;
@@ -96,15 +98,19 @@ namespace GameNamesAssistant
                                 case 0:
                                     name += 'A';
                                     break;
+
                                 case 1:
                                     name += 'E';
                                     break;
+
                                 case 2:
                                     name += 'I';
                                     break;
+
                                 case 3:
                                     name += 'O';
                                     break;
+
                                 case 4:
                                     name += 'U';
                                     break;
@@ -116,8 +122,8 @@ namespace GameNamesAssistant
             }
             else
                 return null;
-
         }
+
         /// <summary>
         /// Generates a random name from a given array of letters with the option to specify the length of the name. The length of the name is selected randomly between 3 and 15 letters.
         /// </summary>
@@ -140,7 +146,7 @@ namespace GameNamesAssistant
 
                         for (int i = 0; i < letters.Length; i++)
                         {
-                            if ((letters[i] == 'a' || letters[i] == 'A') || (letters[i] == 'e' || letters[i] == 'E')||(letters[i] == 'i' || letters[i] == 'i') 
+                            if ((letters[i] == 'a' || letters[i] == 'A') || (letters[i] == 'e' || letters[i] == 'E') || (letters[i] == 'i' || letters[i] == 'i')
                                 || (letters[i] == 'o' || letters[i] == 'O') || (letters[i] == 'u' || letters[i] == 'U'))
                             {
                                 vowels.Add(letters[i]);
@@ -203,11 +209,9 @@ namespace GameNamesAssistant
                 }
                 else
                     return null;
-
             }
             else
                 return null;
-
         }
     }
 }
