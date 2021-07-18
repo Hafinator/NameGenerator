@@ -67,9 +67,10 @@ namespace GameNamesAssistant
         /// <summary>
         /// Generates a random uppercase name of a specific length.
         /// </summary>
-        /// <param name="len">The length of a specific name</param>
+        /// <param name="len">The length of a specific name, min: 2</param>
+        /// <param name="allCaps">Should the name be in all caps</param>
         /// <returns>A random name</returns>
-        public static string GenerateRandomPlaceName(int len)
+        public static string GenerateRandomPlaceName(int len, bool allCaps)
         {
             if (len >= 2)
             {
@@ -78,10 +79,17 @@ namespace GameNamesAssistant
                 char letter;
                 while (name.Length < len)
                 {
-                    letter = (char)random.Next(65, 90);
+                    if (allCaps || name == "")
+                    {
+                        letter = (char)random.Next(65, 90);
+                    }
+                    else
+                    {
+                        letter = (char)random.Next(97, 123);
+                    }
                     if (name.Length == 0 || name[name.Length - 1] != letter)
                     {
-                        if (letter != 'A' && letter != 'E' && letter != 'I' && letter != 'O' && letter != 'U')
+                        if (letter != 'A' && letter != 'a' && letter != 'E' && letter != 'e' && letter != 'I' && letter != 'i' && letter != 'O' && letter != 'o' && letter != 'U' && letter != 'u')
                         {
                             withoutVowel++;
                         }
@@ -96,23 +104,38 @@ namespace GameNamesAssistant
                             switch (random.Next(5))
                             {
                                 case 0:
-                                    name += 'A';
+                                    if (!allCaps)
+                                        name += 'a';
+                                    else
+                                        name += 'A';
                                     break;
 
                                 case 1:
-                                    name += 'E';
+                                    if (!allCaps)
+                                        name += 'e';
+                                    else
+                                        name += 'E';
                                     break;
 
                                 case 2:
-                                    name += 'I';
+                                    if (!allCaps)
+                                        name += 'i';
+                                    else
+                                        name += 'I';
                                     break;
 
                                 case 3:
-                                    name += 'O';
+                                    if (!allCaps)
+                                        name += 'o';
+                                    else
+                                        name += 'O';
                                     break;
 
                                 case 4:
-                                    name += 'U';
+                                    if (!allCaps)
+                                        name += 'u';
+                                    else
+                                        name += 'U';
                                     break;
                             }
                         }
