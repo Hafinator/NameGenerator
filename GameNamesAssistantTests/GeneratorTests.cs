@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace GameNamesAssistant.Tests
+namespace NameGenerator.Tests
 {
     [TestClass()]
     public class GeneratorTests

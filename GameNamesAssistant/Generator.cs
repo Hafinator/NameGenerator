@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GameNamesAssistant
+namespace NameGenerator
 {
     public static class Generator
     {
@@ -16,7 +16,6 @@ namespace GameNamesAssistant
             int len = random.Next(3, 16);
             string name = "";
             char letter;
-            //bool vowel = false;
             int withoutVowel = 0;
             while (name.Length < len)
             {
