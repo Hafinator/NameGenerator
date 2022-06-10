@@ -1,2 +1,2 @@
-# GameNamesAssistant
+# NameGenerator
 Does what the name suggests...
