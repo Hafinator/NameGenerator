@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2041
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameNamesAssistant", "GameNamesAssistant\GameNamesAssistant.csproj", "{2E8A93E4-19D9-42AE-9016-CABE4E7C9E9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameGenerator", "GameNamesAssistant\NameGenerator.csproj", "{2E8A93E4-19D9-42AE-9016-CABE4E7C9E9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameNamesAssistantTests", "GameNamesAssistantTests\GameNamesAssistantTests.csproj", "{93913E31-3B14-4E9A-8EC5-CD35844B87AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameGeneratorTests", "GameNamesAssistantTests\NameGeneratorTests.csproj", "{93913E31-3B14-4E9A-8EC5-CD35844B87AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -63,9 +63,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GameNamesAssistant\GameNamesAssistant.csproj">
+    <ProjectReference Include="..\GameNamesAssistant\NameGenerator.csproj">
       <Project>{2E8A93E4-19D9-42AE-9016-CABE4E7C9E9E}</Project>
-      <Name>GameNamesAssistant</Name>
+      <Name>NameGenerator</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
