@@ -64,6 +64,62 @@ namespace NameGenerator
         }
 
         /// <summary>
+        /// Generates a random 3 - 15 letters long uppercase name with more vowels.
+        /// </summary>
+        /// <returns>A random name</returns>
+        public static string GenerateMorePronounceableRandomPlaceName()
+        {
+            int len = random.Next(3, 16);
+            string name = "";
+            char letter;
+            int withoutVowel = 0;
+            while (name.Length < len)
+            {
+                letter = (char)random.Next(65, 90);
+                if (name.Length == 0 || name[name.Length - 1] != letter)
+                {
+                    if (letter != 'A' && letter != 'E' && letter != 'I' && letter != 'O' && letter != 'U')
+                    {
+                        withoutVowel++;
+                    }
+                    else
+                    {
+                        withoutVowel = 0;
+                    }
+                    name += letter;
+
+                    if (name.Length < len && withoutVowel >= 1)
+                    {
+                        switch (random.Next(5))
+                        {
+                            case 0:
+                                name += 'A';
+                                break;
+
+                            case 1:
+                                name += 'E';
+                                break;
+
+                            case 2:
+                                name += 'I';
+                                break;
+
+                            case 3:
+                                name += 'O';
+                                break;
+
+                            case 4:
+                                name += 'U';
+                                break;
+                        }
+                    }
+                }
+            }
+
+            return name;
+        }
+
+        /// <summary>
         /// Generates a random uppercase name of a specific length.
         /// </summary>
         /// <param name="len">The length of a specific name, min: 2</param>
