@@ -115,7 +115,61 @@ namespace NameGenerator
                     }
                 }
             }
+            return name;
+        }
 
+        /// <summary>
+        /// Generates a random uppercase name with more vowels with the specified length.
+        /// </summary>
+        /// <param name="length">The length of he name</param>
+        /// <returns></returns>
+        public static string GenerateMorePronounceableRandomPlaceName(int length)
+        {
+            string name = "";
+            char letter;
+            int withoutVowel = 0;
+            while (name.Length < length)
+            {
+                letter = (char)random.Next(65, 90);
+                if (name.Length == 0 || name[name.Length - 1] != letter)
+                {
+                    if (letter != 'A' && letter != 'E' && letter != 'I' && letter != 'O' && letter != 'U')
+                    {
+                        withoutVowel++;
+                    }
+                    else
+                    {
+                        withoutVowel = 0;
+                    }
+                    name += letter;
+
+                    if (name.Length < length && withoutVowel >= 1)
+                    {
+                        switch (random.Next(5))
+                        {
+                            case 0:
+                                name += 'A';
+                                break;
+
+                            case 1:
+                                name += 'E';
+                                break;
+
+                            case 2:
+                                name += 'I';
+                                break;
+
+                            case 3:
+                                name += 'O';
+                                break;
+
+                            case 4:
+                                name += 'U';
+                                break;
+                        }
+                    }
+                }
+            }
             return name;
         }
 
